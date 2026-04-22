@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="cart">
+      🛒 <span id="cartCount">0</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <img src="images/0-02-05-03e6b58a782e545c4c6e69dbbe050817bd7dddab3e060b844582fca6a8b29971_49a6418ed9d33fb.jpg" class="image" alt="watch">
+    </div>
+
+    <div class="hero-right">
+      <div class="crown">👑</div>
+      <h1>Where Time Becomes Prestige</h1>
+      <p>Luxury is precision. Luxury is Rolex.</p>
+      <a href="#collection" class="btn">Explore Collection</a>
+    </div>
+  </section>
+
+  <!-- COLLECTION -->
+  <section id="collection" class="section">
+    <h2>Featured Collection</h2>
+
+    <div class="product-grid" id="productGrid"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section dark">
+    <h2>About Rolex</h2>
+    <p>
+      Rolex represents precision, heritage, and engineering excellence.
+      Each watch is crafted to last generations and defines timeless luxury.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Name">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- CART -->
+  <div class="cart-panel" id="cartPanel">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+    <p class="total">Total: $<span id="total">0</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
