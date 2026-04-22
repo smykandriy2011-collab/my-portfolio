@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrew | Web Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cloudflare.com">
+
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --primary: #6366f1;
+      --text: #f8fafc;
+      --text-dim: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      background-image: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 72px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      background: linear-gradient(135deg, #fff 50%, var(--text-dim));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: var(--text-dim);
+      font-size: clamp(18px, 3vw, 20px);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin: 10px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 30px -10px rgba(99, 102, 241, 0.6);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      background: var(--card-bg);
+      border-color: var(--text-dim);
+    }
+
+    section { padding: 100px 0; }
+    h2 { font-size: 36px; margin-bottom: 60px; text-align: center; letter-spacing: -1px; }
+
+    /* PROJECTS SECTION */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      height: 100%;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card i {
+      font-size: 32px;
+      margin-bottom: 25px;
+      color: var(--primary);
+    }
+
+    .card h3 { font-size: 24px; margin-bottom: 12px; }
+    .card p { color: var(--text-dim); flex-grow: 1; margin-bottom: 25px; }
+
+    .card-arrow {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+    }
+
+    .card-link:hover .card {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+      background: rgba(99, 102, 241, 0.05);
+    }
+
+    /* SKILLS */
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      background: var(--card-bg);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      border: 1px solid var(--border);
+    }
+
+    /* CONTACT */
+    .contact { text-align: center; padding: 120px 20px; }
+
+    footer {
+      text-align: center;
+      padding: 50px;
+      color: #444;
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Websites that sell & impress</h1>
+      <p>Independent developer creating modern digital experiences for brands that want to stand out.</p>
+
+      <div class="buttons">
+        <a href="#contact" class="btn btn-primary">Hire Me</a>
+        <a href="#projects" class="btn btn-outline">View Projects</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto 30px; color: var(--text-dim);">
+        I build clean, fast, and responsive websites using modern technologies to ensure your business grows online.
+      </p>
+      <div class="skills">
+        <div class="skill">HTML5</div>
+        <div class="skill">CSS3</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Landing Pages</div>
+        <div class="skill">UI/UX Design</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <a href="businnes_page.html" class="card-link" target="_blank">
+          <div class="card">
+            <i class="fas fa-briefcase"></i>
+            <h3>Business Landing</h3>
+            <p>High-converting landing page designed for professional services and corporate growth.</p>
+            <div class="card-arrow">View Project <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="portfolio_page.html" class="card-link" target="_blank">
+          <div class="card">
+            <i class="fas fa-user-circle"></i>
+            <h3>Portfolio Website</h3>
+            <p>A sleek, modern portfolio for creative professionals showcasing work in high definition.</p>
+            <div class="card-arrow">View Project <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Project 3 -->
+        <a href="landing_page.html" class="card-link" target="_blank">
+          <div class="card">
+            <i class="fas fa-rocket"></i>
+            <h3>SaaS Landing</h3>
+            <p>Startup-focused landing page with intuitive flow, pricing tables, and strong CTAs.</p>
+            <div class="card-arrow">View Project <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h2>Let's Work Together</h2>
+      <p style="margin-bottom: 30px; color: var(--text-dim);">Ready to start your project? Let’s talk.</p>
+      <a href="https://t.me/sm_andri" class="btn btn-primary" target="_blank">
+  Contact via Telegram
+</a>
+
+    <footer>
+      © 2026 Andrew | Built with passion for the modern web
+    </footer>
+
+  </div>
+
+</body>
+</html>
