@@ -1,0 +1,637 @@
+:root {
+    --primary: #00ffa3;
+    --primary-hover: #00d688;
+    --bg-dark: #050505;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 8%;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(90deg, #fff, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+}
+
+.nav p {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav p:hover {
+    color: var(--primary);
+}
+
+.auth {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.login {
+    color: var(--text-main);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.start {
+    padding: 10px 24px;
+    background: var(--primary);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 255, 163, 0.2);
+}
+
+/* MAIN SECTION */
+.main-block {
+    display: flex;
+    align-items: center;
+    padding: 120px 8%;
+    gap: 60px;
+    min-height: 80vh;
+}
+
+.text-side {
+    flex: 1;
+}
+
+.text-side h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 24px;
+    letter-spacing: -2px;
+}
+
+.text-side h1 span {
+    color: var(--primary);
+}
+
+.gif {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin-bottom: 40px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.green-btn {
+    background: var(--primary);
+    color: #000;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.outline-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.outline-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #fff;
+}
+
+/* IMAGE SIDE */
+.image-side {
+    flex: 1;
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    z-index: 2;
+    border-radius: 20px;
+    padding: 10px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+}
+
+.app-screen {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.green-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 163, 0.15) 0%, transparent 70%);
+    filter: blur(60px);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* FEATURES */
+/* --- ОБНОВЛЕННЫЙ FEATURES --- */
+.features-section {
+    padding: 120px 8%;
+    position: relative;
+}
+
+/* Добавляем мягкое свечение фоном всей секции */
+.features-section::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 255, 163, 0.03) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.section-title {
+    font-size: clamp(32px, 4vw, 48px);
+    margin-bottom: 70px;
+    letter-spacing: -1px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid var(--border);
+    padding: 50px 40px;
+    border-radius: 32px;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративная полоска сверху при ховере */
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.feature-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(0, 255, 163, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                0 0 20px rgba(0, 255, 163, 0.05);
+}
+
+.feature-card:hover::before {
+    transform: translateX(100%);
+}
+
+.feature-card.active {
+    border-color: var(--primary);
+    background: rgba(0, 255, 163, 0.02);
+}
+
+.feature-card .icon {
+    font-size: 40px;
+    margin-bottom: 25px;
+    display: inline-block;
+    background: rgba(0, 255, 163, 0.1);
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.feature-card:hover .icon {
+    transform: scale(1.1) rotate(5deg);
+    background: var(--primary);
+    color: #000;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* PRICING */
+.pricing-section {
+    padding: 100px 8%;
+    background: linear-gradient(to bottom, transparent, #0a0a0a);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.price-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 40px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-card.featured {
+    border: 2px solid var(--primary);
+    transform: scale(1.05);
+    background: rgba(0, 255, 163, 0.02);
+}
+
+.price-header h4 {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.amount {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.price-features {
+    list-style: none;
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.price-features li {
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* CTA & FOOTER */
+/* --- ОБНОВЛЕННЫЙ CTA (Секция перед футером) --- */
+.cta-section {
+    padding: 100px 8%;
+    background: linear-gradient(to bottom, var(--bg-dark), #000);
+}
+
+.cta-card {
+    position: relative;
+    background: radial-gradient(circle at top right, rgba(0, 255, 163, 0.08), transparent), 
+                rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 120px 40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Декоративная сетка на фоне CTA */
+.cta-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px), 
+                      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.cta-card h2 {
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- ОБНОВЛЕННЫЙ ФУТЕР --- */
+footer {
+    background: #000;
+    padding: 80px 8% 40px;
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Лого шире, остальные колонки равны */
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+/* Если в HTML только одна строка, рекомендую добавить структуру: */
+/* (Ниже стили для расширенной структуры футера) */
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-col h5 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-col p, .footer-col a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555;
+    font-size: 13px;
+}
+
+/* Адаптив для футера */
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    .cta-card {
+        padding: 80px 20px;
+    }
+}
+/* Для кастомного курсора */
+.custom-cursor {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 255, 163, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: width 0.3s, height 0.3s;
+}
+
+/* Для анимации появления */
+.hidden-el {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hidden-el.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Фикс для трансформаций */
+.feature-card, .price-card, .green-btn, .outline-btn {
+    transition: transform 0.2s ease-out, box-shadow 0.3s ease;
+    will-change: transform;
+}
+/* Плавность для всех интерактивных элементов */
+button, .nav p, .feature-card, .price-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden; /* Важно для эффекта ripple */
+    cursor: pointer;
+}
+
+/* Стили для круга при клике (Ripple) */
+.ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Эффект для активных ссылок */
+.nav p:active {
+    opacity: 0.7;
+}
+/* Стиль для посилань у меню */
+.nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.nav a:hover {
+    color: var(--accent-green);
+}
+
+/* Плавний скрол для всієї сторінки */
+html {
+    scroll-behavior: smooth;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+/* Custom Cursor Styles */
+.custom-cursor {
+    width: 20px; height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.2s ease;
+}
+
+.cursor-follower {
+    width: 40px; height: 40px;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.15s ease, width 0.3s, height 0.3s;
+}
+
+/* Scroll Animation Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav a.active {
+    color: var(--primary);
+}
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-card {
+    background: #111;
+    border: 1px solid var(--border);
+    padding: 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    transform: scale(0.9);
+    transition: 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: none; border: none;
+    color: var(--text-muted);
+    font-size: 28px; cursor: pointer;
+}
+
+.modal-header { text-align: center; margin-bottom: 30px; }
+.modal-header h2 { font-size: 28px; margin-bottom: 8px; }
+.modal-header p { color: var(--text-muted); font-size: 14px; }
+
+.modal-form { display: flex; flex-direction: column; gap: 20px; }
+.input-group { display: flex; flex-direction: column; gap: 8px; }
+.input-group label { font-size: 14px; font-weight: 600; }
+.input-group input {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    padding: 12px; border-radius: 10px;
+    color: white; outline: none;
+}
+.input-group input:focus { border-color: var(--primary); }
+
+.modal-submit { width: 100%; margin-top: 10px; }
+
+.modal-footer { margin-top: 25px; text-align: center; font-size: 14px; }
+#authSwitch { color: var(--primary); cursor: pointer; font-weight: 600; }
