@@ -567,3 +567,91 @@ body::before {
 html {
     scroll-behavior: smooth;
 }
+/* --- MOBILE OPTIMIZATION --- */
+
+@media (max-width: 768px) {
+    /* 1. Header & Navigation */
+    .header {
+        padding: 0.8rem 5%;
+    }
+
+    .nav-links {
+        display: none; /* Приховуємо довгий список посилань */
+    }
+
+    /* 2. Hero Section */
+    .hero {
+        grid-template-columns: 1fr; /* Перемикаємо в одну колонку */
+        height: auto;
+        padding: 120px 5% 60px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Зменшуємо гігантський шрифт */
+        letter-spacing: -1px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .image-wrapper {
+        display: block; /* Повертаємо картинку, якщо вона була прихована */
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    /* 3. About & Features */
+    .about {
+        padding: 60px 5%;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr !important; /* Force single column */
+        gap: 40px;
+    }
+
+    .features-modern {
+        flex-direction: column; /* Картки стають одна під одною */
+        gap: 1rem;
+    }
+
+    .f-card {
+        width: 100%;
+    }
+
+    /* 4. Tech Stats */
+    .tech-stats {
+        padding: 25px 20px;
+    }
+
+    /* 5. Courses Section */
+    .courses-container {
+        grid-template-columns: 1fr; /* Одна картка на рядок */
+        padding: 0 5%;
+    }
+
+    .course-card {
+        padding: 2rem 1.5rem;
+    }
+
+    /* 6. General Elements */
+    .btn-primary, .btn-cta, .btn-outline {
+        width: 100%; /* Кнопки на всю ширину для зручності кліку */
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
+/* Додаткове виправлення для дуже маленьких екранів (iPhone SE тощо) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .badge {
+        font-size: 0.65rem;
+    }
+}
