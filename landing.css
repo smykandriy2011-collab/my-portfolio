@@ -635,3 +635,106 @@ html {
 
 .modal-footer { margin-top: 25px; text-align: center; font-size: 14px; }
 #authSwitch { color: var(--primary); cursor: pointer; font-weight: 600; }
+/* --- MOBILE & TABLET OPTIMIZATION --- */
+
+@media (max-width: 1024px) {
+    .header-bar {
+        padding: 15px 5%;
+    }
+    
+    .nav {
+        display: none; /* Ховаємо навігацію на планшетах і мобільних */
+    }
+
+    .main-block {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 5% 40px;
+        gap: 40px;
+    }
+
+    .text-side h1 {
+        font-size: 48px; /* Зменшуємо з 64px */
+    }
+
+    .gif {
+        margin: 0 auto 30px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-side h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .green-btn, .outline-btn {
+        width: 100%;
+    }
+
+    /* Features */
+    .features-section {
+        padding: 60px 5%;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr; /* Картки в одну колонку */
+    }
+
+    .feature-card {
+        padding: 35px 25px;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .price-card.featured {
+        transform: scale(1); /* Прибираємо збільшення, щоб не вилазило за межі */
+        border-width: 1px;
+    }
+
+    /* CTA Section */
+    .cta-card {
+        padding: 60px 20px;
+        border-radius: 24px;
+    }
+
+    .cta-card h2 {
+        font-size: 28px;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr; /* Все в одну колонку */
+        gap: 40px;
+        text-align: center;
+    }
+}
+
+/* Виправлення для маленьких екранів */
+@media (max-width: 400px) {
+    .text-side h1 {
+        font-size: 30px;
+    }
+    
+    .logo {
+        font-size: 18px;
+    }
+}
