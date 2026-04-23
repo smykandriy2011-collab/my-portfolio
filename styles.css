@@ -290,3 +290,52 @@ body {
   color: #000;
   transform: translateY(-2px);
 }
+@media (max-width: 768px) {
+  /* Головний відступ для мобілок */
+  .header {
+    padding: 15px 20px;
+  }
+  
+  .header nav {
+    display: none; /* Приховуємо навігацію, щоб не налізала на кошик (можна замінити на бургер-меню) */
+  }
+
+  .hero {
+    flex-direction: column-reverse; /* Картинка буде над текстом або навпаки */
+    padding: 100px 20px 40px;
+    text-align: center;
+  }
+
+  .hero-right h1 {
+    font-size: 32px; /* Зменшуємо завеликий заголовок */
+  }
+
+  .image {
+    width: 100%; /* Картинка підлаштовується під ширину екрана */
+    max-width: 280px;
+    margin-bottom: 30px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .product-grid {
+    gap: 15px;
+  }
+
+  .product {
+    width: 100%; /* Картки товарів на весь екран */
+    max-width: 320px;
+  }
+
+  .contact-form, .contact-box {
+    width: 100%;
+    margin: 20px auto;
+  }
+  
+  .cart-panel {
+    width: 100%; /* Кошик на весь екран на мобілці */
+    right: -100%;
+  }
+}
