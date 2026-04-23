@@ -180,6 +180,80 @@
       font-size: 13px;
       border-top: 1px solid var(--border);
     }
+        /* --- MOBILE OPTIMIZATION --- */
+
+    @media (max-width: 768px) {
+      section { 
+        padding: 60px 0; /* Зменшуємо вертикальні відступи секцій */
+      }
+
+      h2 { 
+        font-size: 28px; 
+        margin-bottom: 40px; 
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 80vh; /* Щоб на маленьких екранах контент не розтягувався занадто сильно */
+        padding-top: 40px;
+      }
+
+      .hero h1 {
+        line-height: 1.1;
+        margin-bottom: 15px;
+      }
+
+      .hero p {
+        margin-bottom: 30px;
+        font-size: 17px;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column; /* Кнопки одна під одною */
+        gap: 10px;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%; /* Кнопки на всю ширину контейнера */
+        max-width: 300px;
+        margin: 0;
+        padding: 14px 24px;
+      }
+
+      /* PROJECTS */
+      .projects-grid {
+        grid-template-columns: 1fr; /* Тільки одна картка в ряд */
+        gap: 20px;
+      }
+
+      .card {
+        padding: 30px 20px; /* Трохи менше паддінгів всередині карток */
+      }
+
+      /* SKILLS */
+      .skills {
+        gap: 8px;
+      }
+
+      .skill {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+
+      /* CONTACT */
+      .contact {
+        padding: 80px 10px;
+      }
+    }
+
+    /* Для зовсім маленьких екранів (менше 400px) */
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
   </style>
 </head>
 
