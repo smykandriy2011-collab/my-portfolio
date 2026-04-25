@@ -409,7 +409,7 @@ body::before {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--primary-color);
-    background: #eff6ff;
+    background: #000000;
     padding: 0.8rem 1.5rem;
     border-radius: 50px;
     display: inline-block;
